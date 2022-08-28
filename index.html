@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portubol</title>
+</head>
+<body>
+    <div id="teste_class" class="teste"></div>
+</body>
+    <script src="./portubol.js"></script>
+    <script>
+
+        pt.ao_abrir_a_pagina(()=>{
+            alert('Portubol.js !!')
+        })
+        var cont=0;
+
+
+
+        pt.adicionar_evento(document, 'click', ()=>{
+
+            cont++;
+            console.log(cont)
+        })
+        
+        
+        pt.adicionar_classe('#teste_class', 'Teste teste3 teste4')
+
+        
+    </script>
+</html>
