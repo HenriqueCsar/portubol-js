@@ -8,17 +8,30 @@
 </head>
 <body>
     <div id="teste_class" class="teste"></div>
+
+    <div class="acada">
+        <p>dasdads</p>
+        <p>dadasdas</p>
+        <p>gfgfgf</p>
+    </div>
 </body>
     <script src="./portubol.js"></script>
     <script>
 
+        function aaaa(){
+            return 'aadsdsdaaaa'
+        }    
+
+
         pt.ao_abrir_a_pagina(()=>{
-            alert('Portubol.js !!')
+            w = 1
+            pt.alerta_navegador((w)=>{
+                return 'aaaaa'
+            })
         })
+
+
         var cont=0;
-
-
-
         pt.adicionar_evento(document, 'click', ()=>{
 
             cont++;
@@ -26,7 +39,19 @@
         })
         
         
-        pt.adicionar_classe('#teste_class', 'Teste teste3 teste4')
+        pt.adicionar_classe('#teste_class', function() {
+        return "item-" + 2;
+        })
+
+                
+        pt.adicionar_classe('#teste_class', 'aaa bbb ccc');
+
+
+        pt.adicionar_classe('#teste_class', '111');
+
+        pt.a_cada('p', (aa)=>{
+            aa.remove();
+        })
 
         
     </script>
