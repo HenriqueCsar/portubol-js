@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portubol.js</title>
+    <link rel="stylesheet" href="https://cdn.usebootstrap.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        
+        <h2>Portubol.js</h2>
+
+    </div>
+    <div class="row m-5">
+        <div class="col-sm-3">
+          <div class="list-group" id="list-tab" role="tablist">
+            <a class="list-group-item list-group-item-action" id="list-alerta_navegador-list" data-toggle="list" href="#list-alerta_navegador" role="tab" aria-controls="alerta_navegador">alerta_navegador</a>
+            <a class="list-group-item list-group-item-action" id="list-adicionar_evento-list" data-toggle="list" href="#list-adicionar_evento" role="tab" aria-controls="adicionar_evento">adicionar_evento</a>
+            <a class="list-group-item list-group-item-action" id="list-adicionar_evento_doc-list" data-toggle="list" href="#list-adicionar_evento_doc" role="tab" aria-controls="adicionar_evento_doc">adicionar_evento_doc</a>
+            <a class="list-group-item list-group-item-action" id="list-selecionar_elemento-list" data-toggle="list" href="#list-selecionar_elemento" role="tab" aria-controls="selecionar_elemento">selecionar_elemento</a>
+          </div>
+        </div>
+        <div class="col-sm-9">
+          <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="list-alerta_navegador" role="tabpanel" aria-labelledby="list-alerta_navegador-list">
+                TEXTO DESCRIÇÃO
+            </div>
+            
+            <div class="tab-pane fade" id="list-adicionar_evento" role="tabpanel" aria-labelledby="list-adicionar_evento-list">
+                TEXTO DESCRIÇÃO
+            </div>
+            
+            <div class="tab-pane fade" id="list-adicionar_evento_doc" role="tabpanel" aria-labelledby="list-adicionar_evento_doc-list">
+                TEXTO DESCRIÇÃO
+            </div>
+            
+            <div class="tab-pane fade" id="list-selecionar_elemento" role="tabpanel" aria-labelledby="list-selecionar_elemento-list">
+                TEXTO DESCRIÇÃO
+            </div>
+          </div>
+        </div>
+      </div>
+
+</body>
+<script src="../portubol.js"></script>
+<script>
+    pt.ao_abrir_a_pagina(()=>{        
+    
+            pt.adicionar_classe('#list-tab > a:first-child', 'active')
+
+            pt.a_cada('#list-tab a', (obj)=>{
+                pt.adicionar_evento(obj, 'click', (objs)=>{
+                    
+                    // Remover classes dos outros itens
+                    pt.a_cada('#list-tab a', (obj)=>{
+                       pt.remover_classe(obj, 'active')
+                    })
+
+                    // Adicionar classe no item selecionado
+                    pt.adicionar_classe(objs, 'active')
+                })
+            })
+        }
+    );
+</script>
+</html>
